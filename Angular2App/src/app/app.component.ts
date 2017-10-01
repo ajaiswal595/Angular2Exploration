@@ -2,25 +2,25 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template:`<button class="colorClass" [class]='classesToApply'>My Button</button>
+  template:`<button style='color:red' [style.font-weight]="isBold ? 'bold':'normal'">My Button</button>
+  <br/>
+  <button style='color:red' [style.font-weight]="isBold ? 'bold':'normal'" [style.font-size.px]="fontSize">My Button</button>
   <br/><br/>
-  <button class="colorClass" [class.boldClass]='applyBoldClass'>My Button</button>
-  <button class="colorClass" [class.boldClass]='!applyBoldClass'>Negation condition Button</button>
-  <br/>
-  <br/>
-  <button class="colorClass" [ngClass]='addClasses()'>NgClass  Button</button>`
+  <button style='color:red' [ngStyle]="addStyles()">My Button3</button>`
   //templateUrl: 'app/app.component.html',
 })
 export class AppComponent {
-  classesToApply: string = 'italicClass boldClass';
-  applyBoldClass : boolean = true;
-  applyItalicClass : boolean = true;
+  isBold : boolean = true;
+  fontSize : number = 30;
+  isItalic : boolean = true;
 
-  addClasses(){
-    let classes = {
-        boldClass : this.applyBoldClass,
-        italicClass:this.applyItalicClass
+  addStyles(){
+    let styles = {
+      'font-size.px':this.fontSize,
+      'font-style':this.isItalic ?'italic' :'normal',
+      'font-weight':this.isBold?'bold':'normal'
     };
-    return classes;
+    return styles;
+    
   }
 }
