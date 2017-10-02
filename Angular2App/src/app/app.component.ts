@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template:`Name : <input [value]='name' (input)='name=$event.target.value'/>
+  template:`Name : <input [(ngModel)]='name'/>
   <br/>
   You entered :{{name}}`
 })
