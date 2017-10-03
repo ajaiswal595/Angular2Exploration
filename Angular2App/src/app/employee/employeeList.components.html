@@ -15,7 +15,7 @@
             <td>{{employee.name}}</td>
             <td>{{employee.gender}}</td>
             <td>{{employee.anualSalary}}</td>
-            <td>{{employee.dateOfBirth}}</td>
+            <td>{{employee.dateOfBirth | date:'fullDate'}}</td>
            
         </tr>
         <tr *ngIf="!employees || employees.length==0">
