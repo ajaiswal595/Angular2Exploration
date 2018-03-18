@@ -1,0 +1,11 @@
+to create new project
+ng new ProjectName
+
+to compile
+tsc main.ts --target ES5 && node main.js
+
+to generate component 
+ng g c course                      ng for angular g for generate c for component course name of component
+
+to generate service
+ ng g s email                     ng for angular g for generate s for service email for email.service.ts 
